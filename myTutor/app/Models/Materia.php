@@ -25,7 +25,7 @@ class Materia extends Model
     public function tutores(): BelongsToMany
     {
         // Define la tabla pivote 'tutor_materia'
-        return $this->belongsToMany(Tutor::class);
+        return $this->belongsToMany(Tutor::class, 'tutor_materia');
     }
 
     /**

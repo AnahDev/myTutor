@@ -17,6 +17,7 @@ class Tutor extends Model
      *
      * 
      */
+    protected $table = 'tutores'; // indeica que la tabla para este modelo se llama tutores
     protected $fillable = [
         'user_id',
         'qr_codigo',
@@ -44,7 +45,7 @@ class Tutor extends Model
     public function materias(): BelongsToMany
     {
         // Define la tabla pivote 'tutor_materia'
-        return $this->belongsToMany(Materia::class);
+        return $this->belongsToMany(Materia::class, 'tutor_materia');
     }
 
     /**
