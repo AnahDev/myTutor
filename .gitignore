@@ -1,0 +1,48 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+# Dependencias de PHP
+/vendor/
+
+# Dependencias de Node (si usas herramientas front-end)
+node_modules/
+
+# Entorno / Configuraciones sensibles
+.env
+.env.*.php
+
+# Artefactos de compilación / cachés
+/storage/*.key
+/bootstrap/cache/*.php
+
+# Logs y archivos temporales
+/storage/logs/
+storage/framework/
+*.log
+
+# IDEs y sistemas operativos
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
