@@ -22,14 +22,14 @@
                     @endif
                     @if (Auth::user()->role === 'tutor' && Auth::user()->tutor)
                         <x-nav-link :href="route('tutor.materias.index')" :active="request()->routeIs('tutor.materias.index')">
-                            {{ __('Agregar Materias') }}
+                            <span>&#128214;</span>{{ __('Materias') }}
                         </x-nav-link>
                     @endif
                     <x-nav-link :href="route('tutores.index')" :active="request()->routeIs('tutores.index')">
-                        {{ __('Ver Tutores') }}
+                        (&#128065;&#128065;){{ __('Tutores') }}
                     </x-nav-link>
                     <x-nav-link :href="route('citas.index')" :active="request()->routeIs('citas.index')">
-                        {{ __('Mi Agenda') }}
+                        <span class=""> &#128198;{{ __('Mi Agenda') }}</span>
                     </x-nav-link>
                 </div>
             </div>

@@ -18,17 +18,22 @@
                     <div class="mb-6">
                         <a href="{{ route('tutor.materias.create') }}"
                             class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-200 active:bg-indigo-600 transition">
-                            Agregar Materia
+                            &#43;Agregar Materia
                         </a>
                     </div>
 
                     <table class="min-w-full divide-y divide-gray-200">
-                        <thead>
+                        <thead class="bg-green-200  ">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Materia</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Descripción
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-700  uppercase rounded-l-lg">
+                                    Materia
                                 </th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Acciones
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase">Descripción
+                                </th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase rounded-r-lg">
+                                    Acciones
                                 </th>
                             </tr>
                         </thead>
@@ -39,14 +44,18 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $materia->descripcion }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <a href="{{ route('tutor.materias.edit', $materia->id) }}"
-                                            class="text-indigo-600 hover:text-indigo-900 mr-2">Editar</a>
+                                            class="inline-flex items-center px-4 py-2 bg-emerald-100 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-emerald-500 focus:outline-none focus:border-emerald-700 focus:ring focus:ring-emerald-200 active:bg-emerald-600 transition"
+                                            title="Editar">
+                                            &#128394;</a>
                                         <form action="{{ route('tutor.materias.destroy', $materia->id) }}"
                                             method="POST" class="inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-600 hover:text-red-900"
+                                            <button type="submit"
+                                                class="inline-flex items-center px-4 py-2 bg-red-100 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 transition"
+                                                title="Eliminar"
                                                 onclick="return confirm('¿Seguro que deseas eliminar esta materia?')">
-                                                Eliminar
+                                                &#10006;
                                             </button>
                                         </form>
                                     </td>

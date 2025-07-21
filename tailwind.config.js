@@ -14,6 +14,15 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+             colors: {
+        'tutor': {
+          'purple': '#6366f1',
+          'blue': '#3b82f6', 
+          'orange': '#f59e0b',
+          'pink': '#ec4899',
+          'coral': '#f97316'
+        }
+      }
         },
     },
 
