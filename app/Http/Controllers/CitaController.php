@@ -20,7 +20,7 @@ class CitaController extends Controller
     {
         $user = Auth::user();
 
-        if ($user->esTutor()) {
+        if ($user->tutor) {
             $tutor = $user->tutor; // Relación User -> Tutor
             $citas = Cita::with(['estudiante', 'materia', 'horario'])
                 ->where('tutor_id', $tutor->id)
@@ -74,7 +74,7 @@ class CitaController extends Controller
             'hora' => $horaCalculada,
             'hora_inicio' => $request->hora_inicio,
             'hora_fin' => $request->hora_fin,
-            'nota' => $request->comentarios,
+            'nota' => $request->nota,
             'estado' => 'pendiente'
         ]);
 
@@ -160,7 +160,7 @@ class CitaController extends Controller
         $cita = Cita::findOrFail($id);
         $user = Auth::user();
 
-        if (!$user->esTutor() || $user->tutor->id !== $cita->tutor_id) {
+        if (!$user->tutor || $user->tutor->id !== $cita->tutor_id) {
             return redirect()->back()->with('error', 'No tienes permisos para cambiar el estado de esta cita');
         }
 
@@ -184,7 +184,7 @@ class CitaController extends Controller
         // $user = auth()->user();
 
         // Solo el tutor de la cita puede eliminar
-        if (!$user->esTutor() || $user->tutor->id !== $cita->tutor_id) {
+        if (!$user->tutor || $user->tutor->id !== $cita->tutor_id) {
             return redirect()->back()->with('error', 'No tienes permisos para eliminar esta cita');
         }
 

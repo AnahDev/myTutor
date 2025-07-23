@@ -52,10 +52,10 @@ class User extends Authenticatable
     }
 
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
     /**
      * Relación con el perfil de tutor (si el usuario es tutor).
      * Un usuario puede tener un perfil de tutor.
