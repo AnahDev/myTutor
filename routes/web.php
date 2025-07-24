@@ -24,6 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
+    Route::get('comunidad', function () {
+        return view('comunidad');
+    })->name('comunidad');
     // Rutas principales para gestión de citas
     // Laravel automáticamente aplica las policies cuando usas Resource Controllers
     Route::resource('citas', CitaController::class);
