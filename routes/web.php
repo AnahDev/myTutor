@@ -6,6 +6,7 @@ use App\Http\Controllers\CitaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\TutorMateriaController;
+use App\Http\Controllers\QrController;
 
 
 
@@ -24,9 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    Route::get('comunidad', function () {
-        return view('comunidad');
-    })->name('comunidad');
+
     // Rutas principales para gestión de citas
     // Laravel automáticamente aplica las policies cuando usas Resource Controllers
     Route::resource('citas', CitaController::class);
@@ -79,6 +78,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/tutor/citas', [CitaController::class, 'misCitas'])->name('citas.tutor');
     });
     // });
+
+    Route::get('comunidad', function () {
+        return view('comunidad');
+    })->name('comunidad');
+
+    Route::get('perfil/qr', [QrController::class, 'generateQr'])->name('qr.generate');
+
+
 
 
 
